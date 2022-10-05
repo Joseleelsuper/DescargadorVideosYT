@@ -55,13 +55,11 @@ def descarga_vídeo():
 			print("Hubo algún error bro, pero tiene que ver con la conexión a YouTube o con el link, prueba más tarde.")
 			input("Presiona enter para continuar...")
 			break
-		
+
 		try:
-			#Conseguir la resolución de vídeo más alta disponible
-			stream = yt.streams.get_highest_resolution()
 			#Descargar el video
 			print("Descargando: ",yt.title)
-			stream.download(SAVE_PATH)
+			yt.streams.get_highest_resolution().download(SAVE_PATH)
 			print("Descarga de "+yt.title+" completada!\n")
 		except:
 			print("\nHubo algún error bro, mira a ver si el enlace está bien puesto.")
